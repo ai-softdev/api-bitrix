@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-Bold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-BoldItalic.ttf') format('truetype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-LightItalic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-MediumItalic.ttf') format('truetype');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu';
+        src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+}
+
+* {
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main_back {
+    background: #BB616A url("/jupiter-poster.jpg") fixed 0 0 no-repeat;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #BB616A;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E4A321;
+    box-shadow: inset 0 0 6px white;
+    border-radius: 20px;
+}
+
+.gantt {
+    background: rgba(255, 255, 255, 1);
+    height: 500px;
+}
+
+.gantt-container {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.gantt .grid-row {
+    fill: rgba(255, 255, 255, 1);
+}
+
+/*.gantt .grid-row:nth-child(even) {*/
+/*    fill: rgba(255, 255, 255, 0.4);*/
+/*}*/
+
+.gantt-container .popup-wrapper {
+    background: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.gantt-container .popup-wrapper .pointer {
+    top: 10px !important;
+    left: -4px !important;
+    transform: rotateZ(93deg) !important;
+    border-top-color: #d1d5db !important;
+}
+
+.popup-wrapper {
+    background-color: rgb(209 213 219) !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.popup-wrapper div::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.gantt .grid-header {
+    fill: rgba(255, 255, 255, 1);
+}
+
+.gantt .lower-text, .gantt .upper-text {
+    fill: #535c69;
+    font-size: 14px !important;
+}
+
+.gantt-container::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.gantt-container::-webkit-scrollbar-thumb {
+    background-color: #E4A321;
+    border-radius: 20px;
+}
+
+
+.gantt-container .bar-wrapper .handle {
+    display: none !important;
+}
+
+.bar-label {
+    font-size: 18px !important;
+}
+
+.bar-progress,.bar {
+    transition: fill 0.3s ease-in-out !important;
+}
+
+.gantt .expectation .bar-progress {
+    fill: #035ec0;
+}
+.gantt .expectation:hover .bar-progress {
+    fill: #034891;
+}
+.gantt .expectation.active .bar-progress {
+    fill: #034891;
+}
+
+.gantt .in-progress .bar-progress {
+    fill: #ff8700;
+}
+.gantt .in-progress:hover .bar-progress {
+    fill: #be6500;
+}
+.gantt .in-progress.active .bar-progress {
+    fill: #be6500;
+}
+
+.gantt .control .bar-progress {
+    fill: #e0ca00;
+}
+.gantt .control:hover .bar-progress {
+    fill: #a29300;
+}
+.gantt .control.active .bar-progress {
+    fill: #a29300;
+}
+
+.gantt .done .bar-progress {
+    fill: rgba(21, 128, 61, 0.8);
+}
+.gantt .done:hover .bar-progress {
+    fill: rgba(15, 87, 42, 0.8);
+}
+.gantt .done.active .bar-progress {
+    fill: rgba(15, 87, 42, 0.8);
+}
+
+.gantt .postponed .bar-progress {
+    fill: #ababab;
+}
+.gantt .postponed:hover .bar-progress {
+    fill: #797979;
+}
+.gantt .postponed.active .bar-progress {
+    fill: #797979;
+}
+
+.gantt .bar {
+    fill: rgba(149, 157, 165, 0.3);
+}
+
+.loader-container {
+    transition: opacity 0.2s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.2s ease, visibility 0s;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
